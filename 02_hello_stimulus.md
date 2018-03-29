@@ -63,7 +63,7 @@ export default class extends Controller {
 </div>
 ```
 
-識別名稱的存在就是為了連結元素和 controller。在這個範例識別名稱是 `hello` 接著 Stimulus 就知道要建立一個 `hello_controller.js` 的物件實例。如果想理解更多關於 controller 是如何被自動載入可以參考[安裝教學]({% link _handbook/06_installing_stimulus.md %})。
+識別名稱的存在就是為了連結元素和 controller。在這個範例識別名稱是 `hello` 接著 Stimulus 就知道要建立一個 `hello_controller.js` 的物件實例。如果想理解更多關於 controller 是如何被自動載入可以參考[安裝教學](06_installing_stimulus.md)。
 
 ## 檢查是否正常運作？
 

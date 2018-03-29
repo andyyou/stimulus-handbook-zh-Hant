@@ -1,4 +1,4 @@
-# Summary
+# 目錄
 
 * [序](README.md)
 * [Stimulus 源起](00_the_origin_of_stimulus.md)
