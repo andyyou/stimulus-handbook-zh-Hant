@@ -1,8 +1,8 @@
-# Stimulus 官方手冊 - 繁體中文版
----
+# Stimulus 手冊 - 繁體中文版
 
-Stimulus handbook 翻譯。
+本手冊於 2018-03-29 翻譯自 [stimulus/handbook](https://stimulusjs.org/handbook) 官方教學手冊。
 
+> 如需最新資訊請參考 https://stimulusjs.org
 
 ## 資源
 
