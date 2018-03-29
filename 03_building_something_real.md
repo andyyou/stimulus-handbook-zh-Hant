@@ -6,7 +6,7 @@
 
 在 Basecamp 的使用介面上，佈局看起來像下圖：
 
-<img src="./assets/bc3-clipboard-ui.png" width="500" height="122" class="handbook__screenshot">
+<img src="assets/bc3-clipboard-ui.png" width="500" height="122" class="handbook__screenshot">
 
 當您點擊上圖中的 `Copy` 按鈕時，Basecamp 會複製隔壁 Email 的文字到剪貼簿上。
 
