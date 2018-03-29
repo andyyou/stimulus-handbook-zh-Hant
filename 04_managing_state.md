@@ -262,7 +262,7 @@ clone (e) {
   document.body.appendChild(el)
 }
 ```
-
+## 總結與下一步
 ## Wrap-Up and Next Steps
 
 在這一章我們理解了如何使用 Stimulus 的 Data API 來處理 index 狀態。
