@@ -2,10 +2,10 @@
 
 目前多數主流的前端框架主張我們把狀態全部交給 JavaScript 來處理。將 DOM 單純用來渲染輸出，由客戶端的樣板搭配伺服器端來的 JSON 去產生最後的結果。
 
-Stimulus 採取不同的方式。一個 Stimulus 應用程式的狀態基本上會存在 DOM 的屬性上；controller 基本上不處理狀態。這樣的作法讓我們可以和各式各樣的 HTML 搭配，例如：一般初始化的頁面，Ajax 請求，Turbolinks 的 visit 機制，甚至其他的 JavaScript 函式庫。
+Stimulus 採取不同的方式。一個 Stimulus 應用程式的狀態基本上會存在 DOM 的屬性上；controller 基本上不管理狀態。這樣的作法讓我們可以和各式各樣的情況下和 HTML 搭配，例如：一般初始化的頁面，Ajax 請求，Turbolinks 的 visit 機制，甚至其他的 JavaScript 函式庫。
 套用的 controller 會自動建立而不需要其他初始化的步驟。
 
-## 建立幻燈片
+## 投影片效果（slide）範例
 
 在上一章，我們已經看過了 Stimulus controller 如何在 HTML 中通過加入一個 class 樣式名稱來達成一個簡單的狀態管理。但如果我們需要的是儲存一個較為複雜的值，而不是簡單的註記？
 
@@ -25,7 +25,7 @@ Stimulus 採取不同的方式。一個 Stimulus 應用程式的狀態基本上�
 </div>
 ```
 
-每一個 `slide` target 代表一系列投影片中的一頁。我們的 controller 將會負責處理一次只顯示一頁內容。
+每一個 `slide` target 代表一系列投影片中的一頁。我們的 controller 將會負責`一次只顯示一頁內容`的處理。
 
 一開始我們可以使用 CSS 來把所有投影片隱藏起來，只有當 `slide--current` 套用在元素上的時候才顯示：
 

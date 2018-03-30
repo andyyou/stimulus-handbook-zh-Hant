@@ -8,4 +8,3 @@
 * [狀態管理](04_managing_state.md)
 * [處理外部資源](05_working_with_external_resources.md)
 * [安裝 Stimulus](06_installing_stimulus.md)
-

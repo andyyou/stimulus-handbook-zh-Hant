@@ -1,6 +1,6 @@
 # 建置實務範例
 
-我們已經實作第一個 controller 也學習了關於 Stimulus 如何讓 HTML 和 JavaScript 繫結。現在讓我們參考 Basecamp 的一些功能來重新實作一個 controller。
+我們已經實作第一個 controller 也學習了關於 Stimulus 如何讓 HTML 和 JavaScript 繫結。現在讓我們參考 Basecamp 的一些功能來重新實作一個比較接近實際需求的 controller。
 
 ## DOM 剪貼簿 API
 
@@ -10,7 +10,7 @@
 
 當您點擊上圖中的 `Copy` 按鈕時，Basecamp 會複製隔壁 Email 的文字到剪貼簿上。
 
-其中 Web 有提供關於[存取作業系統剪貼簿的 API](https://www.w3.org/TR/clipboard-apis/)，不過並沒有 HTML 元素可以直接完成這個功能因此我們需要透過按鈕等元素搭配 JavaScript 來實作。
+其中 Web 有提供關於[存取作業系統剪貼簿的 API](https://www.w3.org/TR/clipboard-apis/)，不過並沒有 HTML 標籤可以直接完成這個功能因此我們需要透過按鈕等元素搭配 JavaScript 來實作。
 
 ## 實作複製按鈕
 
@@ -47,7 +47,7 @@ export default class extends Controller {
 
 ## 定義目標元素
 
-我們接著需要設定文字欄位 input 的參考以便我們在使用 clipboard API 之前先取得其內容（我們的 PIN 碼）。讓我們加入 `data-target="clipboard.source"` 到 input 上：
+我們接著需要設定文字欄位 input 的參考，以便我們在使用 clipboard API 之前先取得其內容（我們的 PIN 碼）。讓我們加入 `data-target="clipboard.source"` 到 input 上：
 
 ```html
   PIN: <input data-target="clipboard.source" type="text" value="1234" readonly>

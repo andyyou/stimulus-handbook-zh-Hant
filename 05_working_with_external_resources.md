@@ -49,7 +49,7 @@ export default class extends Controller {
 }
 ```
 
-當 controller 和 DOM 繫結 `connect()` 被調用，我們即開始使用 [Fetch] (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) 讀取在 `data-content-loader-url` 屬性設定的 URL 。然後我們將讀取的 HTML 換到 根元素的 `innerHTML` 屬性中。
+當 controller 和 DOM 繫結 `connect()` 被調用，我們即開始使用 [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) 讀取在 `data-content-loader-url` 屬性設定的 URL 。然後我們將讀取的 HTML 換到 controller 根元素的 `innerHTML` 屬性中。
 
 開啟瀏覽器開發者工具中的 `Network` 網路分頁，然後重新載入。我們會看到在 `index.html` 請求載入之後會有另外一個 `messages.html` 的請求跟在後面。
 
@@ -65,7 +65,7 @@ export default class extends Controller {
      data-content-loader-refresh-interval="5000"></div>
 ```
 
-然後修改 controller ，我們先確認是否有 `interval` 屬性的設定，如果有，就啟動一個 timer。
+然後修改 controller ，我們先確認是否有 `refreshInterval` 屬性的設定，如果有，就啟動一個 timer。
 
 ```js
   connect() {
@@ -88,7 +88,7 @@ export default class extends Controller {
 
 ## 釋放資源
 
-我們在 controller 連線之後啟動了 timer，但我們完全沒有停止它的機制。這意味著一旦我們 controller 掛載的元素被移除之後，HTTP request 依舊會在背景執行。
+我們在 controller 連線之後啟動了 timer，但我們完全沒有停止它的機制。這意味著一旦我們 controller 掛載的元素被移除或解除繫結之後，HTTP request 依舊會在背景執行。
 
 我們可以在 `startRefreshing()` 方法裡面紀錄一個 timer 的參考（變數），然後在 `disconnect()` 時取消 timer 。
 

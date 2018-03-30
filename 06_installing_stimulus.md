@@ -7,9 +7,7 @@
 
 Stimulus 整合了 [webpack](https://webpack.js.org/) 模組封裝工具（資源封裝）並使用它來達成自動載入我們專案中的 controller 檔案。
 
-具體來說是使用 webpack 的 [`require.context`](https://webpack.js.org/api/module-methods/#require-context) 設定載入 Stimulus controller 檔案所在的目錄，然後將 `definitionsFromContext` 處理 `context` 的結果傳入 `Application.load`：
-
-> `require.context` 是 webpack 支援載入模組（載入欲編譯檔案）的一種方式，一般來說我們使用 `ES6`、`CommonJS`、`AMD` 語法讓 webpack 自動載入並編譯，除了上面這些寫在程式碼的語法外，webpack 也提供 `require.context` 這種方式讓我們加入模組。
+具體來說是使用 webpack 的 [`require.context`](https://webpack.js.org/api/module-methods/#require-context) 設定載入 Stimulus controller 檔案所在目錄下的檔案，然後將 `definitionsFromContext` 處理 `context` 的結果傳入 `Application.load`：
 
 ```js
 // src/application.js
@@ -21,11 +19,23 @@ const context = require.context("./controllers", true, /\.js$/)
 application.load(definitionsFromContext(context))
 ```
 
+> 譯者註：`require.context` 是 webpack 支援載入模組（載入欲編譯檔案）的一種方式，一般來說我們使用 `ES6`、`CommonJS`、`AMD` 語法讓 webpack 自動載入並編譯，除了上面這些寫在程式碼的語法外，webpack 也提供 `require.context` 這種方式讓我們加入模組，然後使用 `context(key)` 的方式調用。
+
+```js
+// 譯者補充：
+const context = require.context('components', false, /\.js$/)
+// 列出模組的 key
+context.keys().forEach(k => console.log(k))
+// 調用模組
+context('key-value')()
+```
+
+
 ### controller 檔案名稱與對應的識別名稱（identifier）
 
 遵循 controller 檔案的命名慣例 `[identifier]_controller.js` 便可以對應到 HTML 中的 `data-controller` 屬性。
 
-Stimulus 的慣例是使用 `_` 底線來區分多個英文單字。controller 檔名的底線會在 `identifier` 轉換成 `-` 連字符號。例如：`content_loader_controller.js` 的識別名稱是 `content-loader`。
+Stimulus 的慣例是使用 `_` 底線來區分多個英文單字。controller 檔名的底線在識別名稱 `identifier` 會轉換成 `-` 連字符號。例如：`content_loader_controller.js` 的識別名稱是 `content-loader`。
 
 我們也許想要使用子目錄作為命名空間，替 controller 分類。controller 路徑前面的 `/` 會變成 `--` 破折號。
 
@@ -104,4 +114,4 @@ application.register("clipboard", ClipboardController)
 
 Stimulus 支援所有主流，最新版本，桌面和行動裝置上的瀏覽器。如果您的專案需要支援舊版的瀏覽器那麼請在載入 Stimulus `之前` 自行加入 `Array.from()`，`Element.closest()`、`Map`，`Object.assign()`，`Promise` 和 `Set` 的 `polyfills`。
 
-為了支援 Internet Explorer 11+ 和 Safari 9+ 。Stimulus 也從 [core-js](https://www.npmjs.com/package/core-js) 和 [element-closest](https://www.npmjs.com/package/element-closest) 中使用了這些 [polyfills](https://github.com/stimulusjs/stimulus/blob/master/packages/%40stimulus/polyfills/index.js) 。
+為了支援 Internet Explorer 11+ 和 Safari 9+ 。Stimulus 也從 [core-js](https://www.npmjs.com/package/core-js) 和 [element-closest](https://www.npmjs.com/package/element-closest) 中使用了這些 [polyfills](https://github.com/stimulusjs/stimulus/blob/master/packages/%40stimulus/polyfills/index.js)。

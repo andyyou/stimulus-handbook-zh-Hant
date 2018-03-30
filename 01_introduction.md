@@ -4,7 +4,7 @@ Stimulus 是一個有`適度`目標的 JavaScript 框架。跟其他框架不同
 
 ## 繫結 HTML 至 JavaScript
 
-Stimulus 運作的方式是透過持續監控頁面並等待 `data-controller` 屬性出現才套用動作。類似 `class` 樣式屬性，您可以在裡面設定多個值。不過我們在這不是套用 class 樣式名稱，`data-controller` 主要用來設定繫結或停止繫結 Stimulus 的控制器（controllers）。
+Stimulus 運作的方式是透過持續監控頁面並等待 `data-controller` 屬性出現才套用動作。類似套用 CSS `class` 樣式屬性，您可以在裡面設定多個值。不過我們在這不是套用 class 樣式名稱。我們使用 `data-controller` 主要用來設定繫結或停止繫結 Stimulus 的 controllers。
 
 > 譯者註：您可以同時套用多個 controller。例如： `data-controller="clipboard members"`
 
@@ -27,4 +27,3 @@ Stimulus 提供的神奇屬性讓我們可以簡潔的分離內容和行為，�
 ## 總結
 
 現在是時候嘗試使用 Stimulus 並理解它是怎麼運作的。下一節我們將開始學習建立第一個 controller。
-

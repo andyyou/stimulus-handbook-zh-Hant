@@ -40,7 +40,7 @@ $ yarn start
 
 ## controller 為 HTML 帶來生命
 
-Stimulus 的核心目標就是自動繫結 DOM 元素和 JavaScript 物件。這個物件我們稱為 `controller`。
+Stimulus 的核心目標就是自動繫結 DOM 元素和 JavaScript 物件。這個所謂的物件我們稱為 `controller`。
 
 讓我們繼承內建的 `Controller` class 來建立第一個 controller。在 `src/controllers` 目錄下建立新檔 - `hello_controller.js`。（範例專案已建立）
 
